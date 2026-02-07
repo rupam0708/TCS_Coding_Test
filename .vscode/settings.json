@@ -1,0 +1,7 @@
+{
+  "editor.inlineSuggest.suppressSuggestions": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.inlineSuggest.edits.showLongDistanceHint": false,
+  "C_Cpp.suggestSnippets": false,
+  "C_Cpp.autocomplete": "disabled"
+}
