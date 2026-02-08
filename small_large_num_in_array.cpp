@@ -61,6 +61,36 @@ using namespace std;
 
 using namespace std;
 
+int smallest(int arr[], int n)
+{
+    if (n < 1)
+        return -1;
+
+    int small = INT_MAX;
+
+    for (int i = 0; i < n; i++)
+    {
+        small = min(small, arr[i]);
+    }
+
+    return small;
+}
+
+int largest(int arr[], int n)
+{
+    if(n<1)
+        return -1;
+
+    int large = INT_MIN;
+
+    for (int i = 0; i < n; i++)
+    {
+        large = max(large, arr[i]);
+    }
+
+    return large;
+}
+
 // Function to find the second smallest element in the array
 int secondSmallest(int arr[], int n)
 {
@@ -122,11 +152,17 @@ int main()
     // Calculate the size of the array
     int n = sizeof(arr) / sizeof(arr[0]);
 
+    // Find the smallest and largest elements
+    int s = smallest(arr, n);
+    int l = largest(arr, n);
+
     // Find the second smallest and second largest elements
     int sS = secondSmallest(arr, n);
     int sL = secondLargest(arr, n);
 
     // Output the results
+    cout << "Smallest is " << s << endl;
+    cout << "Largest is " << l << endl;
     cout << "Second smallest is " << sS << endl;
     cout << "Second largest is " << sL << endl;
 
