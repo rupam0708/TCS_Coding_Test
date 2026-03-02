@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 using namespace std;
 
 int rev_num(int n)
@@ -62,6 +63,17 @@ pair<int, int> get_max_min_digit(int n)
     return {maxd, mind};
 }
 
+bool is_pal(string s)
+{
+    int i = 0, j = s.length() - 1;
+    while (i <= j)
+    {
+        if (s[i++] != s[j--])
+            return false;
+    }
+    return true;
+}
+
 int main()
 {
     // int number;
@@ -76,11 +88,14 @@ int main()
     //     cout << val << " ";
     // cout << endl;
 
-    int n;
-    cin >> n;
-    auto info = get_max_min_digit(n);
+    // int n;
+    // cin >> n;
+    // auto info = get_max_min_digit(n);
 
-    cout << "Max digit = " << info.first << " Min digit = " << info.second << endl;
+    // cout << "Max digit = " << info.first << " Min digit = " << info.second << endl;
+
+    cout << is_pal("ABCDCBA") << endl;
+    cout << is_pal("TAKE U FORWARD") << endl;
 
     return 0;
 }

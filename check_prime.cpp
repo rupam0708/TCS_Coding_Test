@@ -46,6 +46,19 @@ vector<int> get_all_primes(int start, int end)
     return res;
 }
 
+bool can_sum_2_primes(int n)
+{
+    // We only need to go up to n/2 to avoid checking the same pair twice
+    for (int i = 2; i <= n / 2; i++)
+    {
+        if (check_prime2(i) && check_prime2(n - i))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main()
 {
     bool is_prime = check_prime(1);
@@ -54,12 +67,14 @@ int main()
     is_prime = check_prime2(10);
     cout << "Prime : " << (is_prime ? "Yes" : "No") << endl;
 
-    int start, end;
-    cin >> start >> end;
-    vector<int> res = get_all_primes(start, end);
-    for (int val : res)
-        cout << val << " ";
-    cout << endl;
+    // int start, end;
+    // cin >> start >> end;
+    // vector<int> res = get_all_primes(start, end);
+    // for (int val : res)
+    //     cout << val << " ";
+    // cout << endl;
+
+    cout << can_sum_2_primes(74) << endl;
 
     return 0;
 }
