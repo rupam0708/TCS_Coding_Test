@@ -62,6 +62,21 @@ vector<int> all_divisors(int n)
     return res;
 }
 
+bool is_abundant(int n)
+{
+    vector<int> divisors = all_divisors(n);
+
+    int sum = 0;
+
+    for (int val : divisors)
+        if (val != n)
+        {
+            sum += val;
+        }
+
+    return sum > n;
+}
+
 int main()
 {
     cout << check_perfect(6) << endl;
@@ -78,5 +93,8 @@ int main()
     for (int val : res)
         cout << val << " ";
     cout << endl;
+
+    cout << is_abundant(18) << endl;
+    cout << is_abundant(21) << endl;
     return 0;
 }

@@ -53,6 +53,19 @@ int sum_gp(vector<int> v)
     }
 }
 
+int sum_digits(int n)
+{
+    int sum = 0, ld;
+    while (n > 0)
+    {
+        ld = n % 10;
+        sum += ld;
+        n /= 10;
+    }
+
+    return sum;
+}
+
 int main()
 {
     int n = 5;
@@ -66,5 +79,7 @@ int main()
 
     vector<int> gp = {3, 9, 27, 81};
     cout << "Sum of GP = " << sum_gp(gp) << endl;
+
+    cout << sum_digits(529) << endl;
     return 0;
 }
