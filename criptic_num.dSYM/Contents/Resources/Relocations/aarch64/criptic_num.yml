@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/rupamkarmakar/Documents/Development/TCS_Coding_Test/criptic_num'
+relocations:     []
+...
